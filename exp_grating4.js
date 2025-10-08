@@ -10,13 +10,6 @@ const { Scheduler } = util;
 const { abs, sin, cos, PI: pi, sqrt } = Math;
 const { round } = util;
 
-<script src="https://unpkg.com/@jspsych-contrib/plugin-pipe"></script>
-
-
-const subject_id = jsPsych.randomization.randomID(10);
-const filename = `${subject_id}.csv`;
-
-
 // store info about the experiment session:
 let expName = 'exp_grating4';  // from the Builder filename that created this script
 let expInfo = {
@@ -1444,14 +1437,6 @@ function exitRoutineEnd(snapshot) {
 }
 
 
-const save_data = {
-    type: jsPsychPipe,
-    action: "save",
-    experiment_id: "QmTqCllLBwv2",
-    filename: filename,
-    data_string: ()=>jsPsych.data.get().csv()
-};
-
 function importConditions(currentLoop) {
   return async function () {
     psychoJS.importAttributes(currentLoop.getCurrentTrial());
@@ -1470,4 +1455,5 @@ async function quitPsychoJS(message, isCompleted) {
   
   return Scheduler.Event.QUIT;
 }
+
 
