@@ -1,11 +1,6 @@
 ﻿/********************* 
  * Exp_Grating4 *
  *********************/
-<script src="https://unpkg.com/@jspsych-contrib/plugin-pipe"></script>
-
-const subject_id = jsPsych.randomization.randomID(10);
-const filename = `${subject_id}.csv`;
-            
 
 import { core, data, sound, util, visual, hardware } from './lib/psychojs-2025.1.1.js';
 const { PsychoJS } = core;
@@ -1336,7 +1331,7 @@ function exitRoutineBegin(snapshot) {
             Accept: '*/*',   
         },
         body: JSON.stringify({
-            experimentID: 'xxxxxxxxxx',
+            experimentID: 'QmTqCllLBwv2',
             filename: filename,
             data: data,
         }),
@@ -1460,13 +1455,4 @@ async function quitPsychoJS(message, isCompleted) {
   
   return Scheduler.Event.QUIT;
 }
-
-
-const save_data = {
-    type: jsPsychPipe,
-    action: "save",
-    experiment_id: "QmTqCllLBwv2",
-    filename: filename,
-    data_string: ()=>jsPsych.data.get().csv()
-};
 
